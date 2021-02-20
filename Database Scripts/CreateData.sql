@@ -5,7 +5,7 @@ CREATE TABLE Departments_File (
     location char(50),
    PRIMARY KEY (department_id)
 );
-
+Begin Transaction
 Insert into Departments_File
 Select '1','Management','London'
 Union all 
@@ -32,6 +32,7 @@ CREATE TABLE Employees_File (
 random employee name, salary ranging from 10000-25000, Date hired &
 department id between 1-4.*/
 
+Begin Transaction
 Insert into Employees_File
 Select 90001,'John Smith','CEO',NULL,'01/01/95',28000,1
 Union all 
