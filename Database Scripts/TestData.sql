@@ -34,65 +34,65 @@ Select employee_name,salary,date_hired from Employees_File where salary between 
 /*For individual table Department File:*/
 Select * from Departments_File;
 Select department_id, department_name,location from Departments_File;
-Select department_id from Departments_File where department_id between 1 AND 4
+Select department_id from Departments_File where department_id between 1 AND 4 
 
 
 --Here we are checking test boundaries and in-between the boundaries value analysis
 
 -- Negative Case : Testing the record of Employees whose Salary is NOT equals 10,000 AND 25,000 AND Department is not between 1 to 4
-Select e.employee_name,e.salary, e.date_hired,d.department_id 
+Select e.employee_name,e.salary, e.job_title, d.department_id,d.department_name 
 from Employees_File e inner join Departments_File d on e.department_id=d.department_id 
 where (e.salary<>10000 AND e.salary<>25000) AND (d.department_id NOT IN (1,2,3,4))
 
 -- Negative Case : Testing the record of Employees whose Salary is NOT equals 10,000 OR 25,000 OR Department is not between 1 to 4
-Select e.employee_name,e.salary, e.date_hired,d.department_id 
+Select e.employee_name,e.salary,e.job_title, d.department_id,d.department_name 
 from Employees_File e inner join Departments_File d on e.department_id=d.department_id 
 where (e.salary<>10000 OR e.salary<>25000) OR (d.department_id NOT IN (1,2,3,4))
 
 -- Negative Case : Testing the record of Employees whose Salary is NOT equals 10,000 OR 25,000 AND Department is not between 1 to 4
-Select e.employee_name,e.salary, e.date_hired,d.department_id 
+Select e.employee_name,e.salary, e.job_title, d.department_id,d.department_name 
 from Employees_File e inner join Departments_File d on e.department_id=d.department_id 
 where (e.salary<>10000 OR e.salary<>25000) AND (d.department_id NOT IN (1,2,3,4))
 
 -- Negative Case : Testing the record of Employees whose Salary is NOT equals 10,000 AND 25,000 OR Department is not between 1 to 4
-Select e.employee_name,e.salary, e.date_hired,d.department_id 
+Select e.employee_name,e.salary, e.job_title, d.department_id,d.department_name 
 from Employees_File e inner join Departments_File d on e.department_id=d.department_id 
 where (e.salary<>10000 AND e.salary<>25000) OR (d.department_id NOT IN (1,2,3,4))
 
 
 -- Here we are checking Test boundaries, one is lesser and another is greater 
-Select e.employee_name,e.salary, e.date_hired,d.department_id 
+Select e.employee_name,e.salary, e.job_title, d.department_id,d.department_name 
 from Employees_File e inner join Departments_File d on e.department_id=d.department_id 
 where (e.salary<=9999 OR e.salary>=25001) OR (d.department_id IN (1,2,3,4));
 
-Select e.employee_name,e.salary, e.date_hired,d.department_id 
+Select e.employee_name,e.salary,e.job_title, d.department_id,d.department_name 
 from Employees_File e inner join Departments_File d on e.department_id=d.department_id 
 where (e.salary<=9999 AND e.salary>=25001) AND (d.department_id IN (1,2,3,4));
 
-Select e.employee_name,e.salary, e.date_hired,d.department_id 
+Select e.employee_name,e.salary, e.job_title, d.department_id,d.department_name  
 from Employees_File e inner join Departments_File d on e.department_id=d.department_id 
 where (e.salary<=9999 OR e.salary>=25001) AND (d.department_id IN (1,2,3,4));
 
-Select e.employee_name,e.salary,e.date_hired,d.department_id 
+Select e.employee_name,e.salary,e.job_title, d.department_id,d.department_name 
 from Employees_File e inner join Departments_File d on e.department_id=d.department_id 
 where (e.salary<=9999 AND e.salary>=25001) OR (d.department_id IN (1,2,3,4));
 
 
 --//Here we are checking boundaries value analysis method 
 
-Select e.employee_name,e.salary,e.date_hired,d.department_id 
+Select e.employee_name,e.salary,e.job_title, d.department_id,d.department_name 
 from Employees_File e inner join Departments_File d on e.department_id=d.department_id 
 where(e.salary=10000 OR e.salary=25000) OR (d.department_id IN (1,2,3,4));
 
-Select e.employee_name,e.salary, e.date_hired,d.department_id 
+Select e.employee_name,e.salary, e.job_title, d.department_id,d.department_name 
 from Employees_File e inner join Departments_File d on e.department_id=d.department_id 
 where(e.salary=10000 AND e.salary=25000) AND (d.department_id IN (1,2,3,4));
 
-Select e.employee_name,e.salary, e.date_hired,d.department_id 
+Select e.employee_name,e.salary, e.job_title, d.department_id,d.department_name 
 from Employees_File e inner join Departments_File d on e.department_id=d.department_id 
 where(e.salary=10000 OR e.salary=25000) AND (d.department_id IN (1,2,3,4));
 
-Select e.employee_name,e.salary,e.date_hired,d.department_id 
+Select e.employee_name,e.salary,e.job_title, d.department_id,d.department_name 
 from Employees_File e inner join Departments_File d on e.department_id=d.department_id 
 where(e.salary=10000 AND e.salary=25000) OR (d.department_id IN (1,2,3,4));
 
